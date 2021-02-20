@@ -227,7 +227,7 @@ fontButtons.forEach(font => {
     });
 });
 
-// Secting color type 
+// Selecting color type 
 colorButtons.forEach(color => {
     color.addEventListener('click', e => {
         if (e.target.classList.contains('orange-radio-btn')) {
