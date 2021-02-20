@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>pomodoro</h1>
+        </header>
+        <nav class="navbar">
+            <a href="#" class="nav-link pomodoro" id="pomodoro-btn">pomodoro</a>
+            <a href="#" class="nav-link short-break" id="short-break-btn">short break</a>
+            <a href="#" class="nav-link long-break" id="long-break-btn">long break</a>
+            <div class="animation-start"></div>
+        </nav>
+        <main class="app-container" id="app-container">
+            <div class="outer-ring">
+                <div class="inner-ring">
+                    <div class="circular-ring" id='circular-ring'></div>
+                    <div class="cover-circular-ring"></div>
+                </div>
+                
+            </div>
+            <section class="timer">
+                <h3 id="timer-number">25:00</h3>
+                <div class="start-and-pause-btns">
+                    <span id="start-btn" class="start-btn">start</span>
+                    <span id="pause-btn" class="pause-btn">pause</span>
+                </div>
+            </section>
+        </main>
+        <button class="settings-btn" id="settings-btn">
+            <i class="fas fa-cog"></i>
+        </button>
+    </div>
+    <div class="settings-container" id="settings-container">
+        <div class="settings" id="settings-box">
+            <header>
+                <h2>Settings</h2>
+                <!-- <i class="fas fa-times" id="close-btn"></i> -->
+            </header>
+            <div class="time-settings">
+                <h4>Time (minutes)</h4>
+                <div class="types-settings">
+                    <div class="number-settings">
+                        <label for="pomodoro">pomodoro</label>
+                        <input type="number" min="20" max="30" value="25" class="number-input pomodoro-settings" id="pomodoro">
+                    </div>
+                    <div class="number-settings">
+                        <label for="short-break">short break</label>
+                        <input type="number" min="1" max="10" value="5" class="number-input short-break-settings" id="short-break">
+                    </div>
+                    <div class="number-settings">
+                        <label for="long-break">long-break</label>
+                        <input type="number" min="10" max="20" value="15" class="number-input long-break-settings" id="long-break">
+                    </div>
+                </div>
+            </div>
+            <div class="font-settings">
+                <h4>Font</h4>
+                <div class="font-container">
+                    <input type="radio"  name="radio" id="roboto" class="radio-btn roboto-btn" checked="checked">
+                    <label class="font-type roboto-label" for="roboto">Aa</label>
+                    <input type="radio" name="radio" class="radio-btn lato-btn" id="lato">
+                    <label class="font-type lato-label" for="lato">Aa</label>
+                    <input type="radio" name="radio" class="radio-btn oswald-btn"id="oswald">
+                    <label class="font-type oswald-label" for="oswald">Aa</label>
+                </div>
+            </div>
+            <div class="color-settings">
+                <h4>Color</h4>
+                <div class="color-container">
+                    <input type="radio" name="color-btn" id="orange" class="orange-radio-btn color-radio-btn" checked="checked">
+                    <label for="orange" class="color-type orange"><i class="fas fa-check orange-check"></i></label>
+                    <input type="radio" name="color-btn" id="cyan" class="cyan-radio-btn color-radio-btn">
+                    <label for="cyan" class="color-type cyan"><i class="fas fa-check cyan-check"></i></label>
+                    <input type="radio" name="color-btn" id="purple" class="purple-radio-btn color-radio-btn">
+                    <label for="purple" class="color-type purple"><i class="fas fa-check purple-check"></i></label>
+                </div>
+            </div>
+            <button class="apply-settings-btn" id="close-settings-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

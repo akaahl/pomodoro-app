@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Oswald:wght@200;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #312c51;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  color: #cdd0cb;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  top: -20px;
+}
+
+header h1 {
+  text-align: center;
+}
+
+.navbar {
+  position: relative;
+  /* padding: 20px 0; */
+  background-color: #0a043c;
+  border-radius: 2rem;
+  margin-bottom: 40px;
+  z-index: 5;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #495464;
+  font-weight: 800;
+  margin: 5px;
+  padding: 15px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  z-index: 1;
+}
+
+.animation-start {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  height: 80%;
+  width: 105px;
+  border-radius: 2rem;
+  background: #ff5e78;
+  z-index: 0;
+  transition: all 0.3s linear 0s;
+}
+
+.app-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container .outer-ring {
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  background-color: #333456;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: -8px -3px 30px 4px rgb(89, 91, 131),
+    inset 2px 2px 150px 3px rgb(10, 4, 60), 10px 10px 35px 4px rgb(10, 4, 60);
+}
+
+.app-container .outer-ring .inner-ring {
+  background: #0a043c;
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  text-align: center;
+  transform: scale(0.9);
+  cursor: pointer;
+  position: relative;
+}
+
+.inner-ring .circular-ring {
+  height: 330px;
+  width: 330px;
+  border-radius: 50%;
+  background: conic-gradient(#fb743e 0deg, #fb743e 360deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+  transition: background 1s linear;
+}
+
+.inner-ring .cover-circular-ring {
+  height: 310px;
+  width: 310px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #0a043c;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+  /* display: none; */
+}
+
+.app-container .timer {
+  position: absolute;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+}
+
+.timer h3 {
+  font-size: 5rem;
+}
+
+.timer .start-and-pause-btns span {
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-align: center;
+  position: relative;
+  bottom: 50px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.start-btn {
+  display: block;
+}
+
+.pause-btn {
+  display: none;
+}
+
+.settings-btn {
+  text-align: center;
+  background: none;
+  border: 0;
+  color: #cdd0cb;
+  font-size: 2rem;
+  position: relative;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.settings-btn:focus {
+  outline: none;
+}
+
+.settings-btn i:active {
+  transform: rotate(1080deg);
+  transition: transform 1s linear;
+}
+
+.settings-container {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  height: 100vh;
+  visibility: hidden;
+  z-index: 50;
+}
+
+.settings-container.show {
+  visibility: visible;
+  transition: visibility 0.3s ease-in;
+}
+
+.settings {
+  background: #f4f9f9;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 450px;
+  color: #333456;
+  border-radius: 2rem;
+  padding: 20px 0;
+}
+
+.settings header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+.settings header h2 {
+  font-weight: 800;
+}
+
+.settings header i {
+  color: #495464;
+  cursor: pointer;
+}
+
+.settings .time-settings {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 25px;
+}
+
+.settings .time-settings h4 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.time-settings .types-settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.time-settings .types-settings .number-settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.number-settings label {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.number-settings input[type="number"] {
+  width: 6rem;
+  height: 2rem;
+  border-radius: 8px;
+  border: none;
+  background: #dbf6e9;
+  padding: 0 10px;
+  font-weight: 600;
+  color: #312c51;
+}
+
+.number-settings input[type="number"]:focus {
+  outline: 0;
+}
+
+.font-settings {
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.font-settings h4 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.font-settings .font-container {
+  display: flex;
+  position: relative;
+}
+
+.font-settings .font-container .font-type {
+  margin: 0 10px;
+  font-weight: 600;
+  background: #dbf6e9;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  transition: background 0.2s ease-in, color 0.2s ease-in;
+}
+
+.font-container input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.font-container input[type="radio"]:checked + label {
+  background: #333456;
+  color: #f4f9f9;
+}
+
+.font-container .roboto-label {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.font-container .lato-label {
+  font-family: "Lato", sans-serif !important;
+}
+
+.font-container .oswald-label {
+  font-family: "Oswald", sans-serif !important;
+}
+
+.color-settings {
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.color-settings h4 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.color-settings .color-container {
+  display: flex;
+}
+
+.color-container input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.color-container .color-type {
+  margin: 0 10px;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
+
+.color-container .orange {
+  background: #fb743e;
+}
+
+.color-container .cyan {
+  background: cyan;
+}
+
+.color-container .purple {
+  background: #9088d4;
+}
+
+.color-type i {
+  display: none;
+}
+
+.color-container .orange-radio-btn:checked ~ .color-type .orange-check,
+.color-container .cyan-radio-btn:checked ~ .color-type .cyan-check,
+.color-container .purple-radio-btn:checked ~ .color-type .purple-check {
+  display: block;
+}
+
+.settings-container .settings button {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  background: #ec524b;
+  padding: 15px 35px;
+  border-radius: 25px;
+  color: #f4f9f9;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.apply-settings-btn:focus {
+  outline: none;
+}
+
+/* .settings-container .settings button:active {
+    transform: translateX(-5px);
+} */
