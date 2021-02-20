@@ -63,7 +63,6 @@ function clickHandler(e) {
             startingMinutes = +shortBreakValue.split(':')[0];
             time = startingMinutes * 60;
             timerNumber.innerHTML = shortBreakValue;
-            console.log('yes')
         } else  {
             timerNumber.innerHTML = `5:00`;
             startingMinutes = 5;
@@ -96,7 +95,6 @@ function clickHandler(e) {
         numberInputSettings[1].style.background = `lightgray`;
         numberInputSettings[2].disabled = false;
         numberInputSettings[2].style.background = `#dbf6e9`;
-            
     }
 }
 
@@ -134,7 +132,6 @@ function timerCountdown() {
             circularRingColor();
     }
     updateCircularRing();
-    console.log(time)
 }
 
 // Scale in-out function
@@ -180,26 +177,22 @@ closeSettingsBtn.addEventListener('click', () => {
 // Function to change timer settings value
 function timerSettings(e) {
     if (e.target.classList.contains('pomodoro-settings') && animationStarts.style.left === `5px`) {
-        
         timerNumber.innerText = `${e.target.value}:00`;
         pomodoroValue = timerNumber.innerText;
         startingMinutes = +pomodoroValue.split(':')[0];
         time = startingMinutes * 60;
-        console.log(pomodoroValue, animationStarts.style.left);   
 
     } else if (e.target.classList.contains('short-break-settings') && animationStarts.style.left === `128px`) {
         timerNumber.innerText = `${e.target.value}:00`;
         shortBreakValue = timerNumber.innerText;
         startingMinutes = +shortBreakValue.split(':')[0];
         time = startingMinutes * 60;
-        console.log(shortBreakValue);   
         
     } else if (e.target.classList.contains('long-break-settings') && animationStarts.style.left === `250px`) {
         timerNumber.innerText = `${e.target.value}:00`;
         longBreakValue = timerNumber.innerText;
         startingMinutes = +longBreakValue.split(':')[0];
         time = startingMinutes * 60;
-        console.log(longBreakValue);   
     }
 };
 
